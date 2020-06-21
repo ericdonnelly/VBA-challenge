@@ -1,5 +1,5 @@
 # VBA-challenge
-This script loops through all the stocks for one year and outputs the following information:
+This script loops through all the stocks for each year and outputs the following information:
 <br>
 -The ticker symbol.
 <br>
