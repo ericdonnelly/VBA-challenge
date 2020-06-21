@@ -67,7 +67,6 @@ ws.Activate
     End If
 Next i
 ' Loop to apply conditional formatting
-' Presently, this code must be run on an active worksheet to apply formatting
 For i = 2 To Summary_Table_Row
     ' Conditional for color change (green postive, red negative)
     If Cells(i, 13) >= 0 Then
