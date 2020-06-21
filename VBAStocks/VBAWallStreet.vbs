@@ -2,6 +2,8 @@ Sub WallStreet()
 ' Prevents overflow error
 On Error Resume Next
 For Each ws In Worksheets
+'Make the worksheet active
+ws.Activate
   ' Create headers
     ws.Cells(1, 12).Value = "ticker"
     ws.Cells(1, 13).Value = "yearly_change"
@@ -63,16 +65,18 @@ For Each ws In Worksheets
       'Sets variable for total stock volume
       Total_Stock_Volume = Total_Stock_Volume + ws.Cells(i, 7)
     End If
-Next i 
-    ' Loop to apply conditional formatting
-    ' Presently, this code must be run on an active worksheet to apply formatting
-    For j = 2 To Summary_Table_Row
+Next i
+' Loop to apply conditional formatting
+' Presently, this code must be run on an active worksheet to apply formatting
+For i = 2 To Summary_Table_Row
     ' Conditional for color change (green postive, red negative)
-        If Cells(j, 13) >= 0 Then
-        Cells(j, 13).Interior.ColorIndex = 4
-        ElseIf Cells(j, 13) < 0 Then
-        Cells(j, 13).Interior.ColorIndex = 3
+    If Cells(i, 13) >= 0 Then
+    ' Green
+      Cells(i, 13).Interior.ColorIndex = 4
+    ElseIf Cells(i, 13) < 0 Then
+    ' Red
+      Cells(i, 13).Interior.ColorIndex = 3
     End If
-    Next j
+Next i
 Next ws
 End Sub
