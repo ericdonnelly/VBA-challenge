@@ -65,8 +65,7 @@ For Each ws In Worksheets
     End If
 Next i 
     ' Loop to apply conditional formatting
-    ' Presently, this code must be run per number of worksheets to apply formatting universally
-    ' Example: If 3 worksheets, run three times in IDE to apply to all sheets
+    ' Presently, this code must be run on an active worksheet to apply formatting
     For j = 2 To Summary_Table_Row
     ' Conditional for color change (green postive, red negative)
         If Cells(j, 13) >= 0 Then
